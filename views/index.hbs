@@ -1,0 +1,34 @@
+<!doctype html>
+      <html>
+        <head>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>HBS</title>
+          <link rel="stylesheet" href="/stylesheets/style.css" />
+        </head>
+        <body>
+          <h1>This is the HBS page</h1>
+          <h2>Bienvenido {{name}} {{lastName}}</h2>
+
+          {{!-- Condicional para que renderice un contenido u otro --}}
+          {{#if shoppingCart}}
+            <h3>You have some items inside your shopping cart ({{numberOfItems}})</h3>
+          {{else}}
+            <h3>Your shopping cart it's empty :(</h3>
+          {{/if}}
+
+          {{!-- Iteramos sobre arrays --}}
+          <ol>
+            {{#each shoppingCart}}
+              <li>{{this}}</li>
+          {{/each}}
+          </ol>
+          
+          {{!-- Tambien podemos iterar sobre objetos literales --}}
+          {{#each favoriteBook}}
+            <p>{{@key}}</p>
+          {{/each}}
+
+
+        </body>
+      </html>
